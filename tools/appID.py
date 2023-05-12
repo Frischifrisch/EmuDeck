@@ -12,9 +12,7 @@ def get_app_id(exe, appname):
     get_api_id(file, str, str) -> int
     """
     comboString = ''.join([exe, appname])
-    id_int = binascii.crc32(str.encode(comboString)) | 0x80000000
-    
-    return id_int
+    return binascii.crc32(str.encode(comboString)) | 0x80000000
 
 
 def main():
